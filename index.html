@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Triagem</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Formulário de Triagem</h2>
+            </div>
+            <div class="card-body">
+                <div id="alerta-sucesso" class="alert alert-success d-none" role="alert">
+                    Formulário enviado com sucesso!
+                </div>
+                <div id="alerta-erro" class="alert alert-danger d-none" role="alert">
+                    Ocorreu um erro ao enviar o formulário. Tente novamente.
+                </div>
+                <form id="form-triagem">
+                    <div class="form-group">
+                        <label for="estado">Estado <span class="badge badge-secondary">Obrigatório</span></label>
+                        <select class="form-control" id="estado" required>
+                            <option value="">Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome <span class="badge badge-secondary">Obrigatório</span></label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade <span class="badge badge-secondary">Obrigatório</span></label>
+                        <input type="number" class="form-control" id="idade" placeholder="Digite sua idade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo <span class="badge badge-secondary">Obrigatório</span></label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="masculino" value="masculino" required>
+                            <label class="form-check-label" for="masculino">Masculino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="feminino" value="feminino" required>
+                            <label class="form-check-label" for="feminino">Feminino</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contato">Contato <span class="badge badge-secondary">Obrigatório</span></label>
+                        <input type="text" class="form-control" id="contato" placeholder="Telefone ou Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="historico-medico">Histórico Médico <span class="badge badge-secondary">Obrigatório</span></label>
+                        <textarea class="form-control" id="historico-medico" rows="3" placeholder="Descreva seu histórico médico (doenças crônicas, alergias, etc.)" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicamentos">Medicamentos em Uso</label>
+                        <textarea class="form-control" id="medicamentos" rows="2" placeholder="Liste os medicamentos que está usando atualmente"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cirurgias">Cirurgias ou Procedimentos Médicos Anteriores</label>
+                        <textarea class="form-control" id="cirurgias" rows="2" placeholder="Descreva suas cirurgias ou procedimentos médicos anteriores"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sintomas">Sintomas <span class="badge badge-secondary">Obrigatório</span></label>
+                        <textarea class="form-control" id="sintomas" rows="3" placeholder="Descreva seus sintomas atuais" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="inicio-sintomas">Início dos Sintomas</label>
+                        <input type="text" class="form-control" id="inicio-sintomas" placeholder="Quando os sintomas começaram?">
+                    </div>
+                    <div class="form-group">
+                        <label for="intensidade-sintomas">Intensidade dos Sintomas</label>
+                        <input type="text" class="form-control" id="intensidade-sintomas" placeholder="Qual a intensidade dos sintomas?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivel-dor">Nível de Dor</label>
+                        <input type="range" class="custom-range" id="nivel-dor" min="0" max="10" step="1">
+                        <div class="d-flex justify-content-between">
+                            <span>0</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exposicao">Exposição Recente a Agentes Infecciosos</label>
+                        <textarea class="form-control" id="exposicao" rows="2" placeholder="Descreva qualquer exposição recente a agentes infecciosos (viagens, contato com doentes, etc.)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Enviar
+                        <div id="spinner" class="spinner-border spinner-border-sm d-none" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('form-triagem').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('spinner').classList.remove('d-none');
+            setTimeout(() => {
+                document.getElementById('spinner').classList.add('d-none');
+                document.getElementById('alerta-sucesso').classList.remove('d-none');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
